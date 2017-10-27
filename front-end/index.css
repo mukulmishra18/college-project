@@ -9,3 +9,12 @@ button {
     width: 15%;
     margin-left: 20%;
 }
+
+.sub-text {
+	font-size: 17px;
+    opacity: 0.8;
+}
+
+.new-search {
+	margin: 3%;
+}
