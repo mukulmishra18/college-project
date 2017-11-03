@@ -1,16 +1,24 @@
 $(document).ready(function() {
 	$('#submit-query').on('click', function() {
+		var keyword = $('#keyword')[0].value;
+		var length = $('#length')[0].value;
+		var medium = $('#medium')[0].value;
+		var language = $('#language')[0].value;
+		var experience = $('#experience')[0].value;
+		// console.log(keyword, length, medium, language, experience);
 
 		$.ajax({
 			url: 'http://localhost:8080/api',
 			dataType: 'json',
-			data: { 'length': 1, 'level': 'expert', },
+			data: {
+				'keyword': keyword,
+				'length': length,
+				'medium': medium,
+				'language': language,
+				'experience': experience
+			},
 			success: function(data) {
-				data = {
-					href: 'http://example.com',
-					text: 'Machine learning Text',
-					subText: 'Machine learning course by MIT.'
-				};
+				console.log(data);
 				
 				var finalString = '';
 				finalString += '<div class="container"> <button class="btn btn-primary new-search"' +
